@@ -1,3 +1,3 @@
 <?php
 
-echo $pepe." ";
+echo $dato1." ";
