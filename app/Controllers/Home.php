@@ -39,5 +39,10 @@ class Home extends BaseController
         // var_dump($user);
         return view('welcome_message',$user);
     }
+
+    public function menu(){
+        return view('menu/1-libreria').view('menu/2-header').view('menu/3-sidenav').view('menu/4-sidebar').view('menu/5-content').view('menu/6-footer');
+
+    }
     
 }
