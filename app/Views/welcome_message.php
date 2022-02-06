@@ -9,7 +9,7 @@
 	<!-- PAGINA POR DEFECTO -->
 	<!-- STYLES -->
 	<?php
-	echo $usuario_id. " ".$usu_nick. " ".$usu_password;
+	print_r( $data);
 	?>
 	<style {csp-style-nonce}>
 		* {

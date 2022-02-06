@@ -4,7 +4,7 @@
 			<div class="logo-header" data-background-color="blue">
 				
 				<a href="index.php" class="logo">
-					<img src="<?php echo base_url('public/img/logo.svg');?>" alt="navbar brand" class="navbar-brand">
+					<img width="170px" src="<?php echo base_url('public/img/logo_audentic.png');?>" alt="navbar brand" class="navbar-brand">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -248,7 +248,7 @@
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="#">Account Setting</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Logout</a>
+										<a class="dropdown-item" href="<?php echo base_url('/salir')?>">Logout</a>
 									</li>
 								</div>
 							</ul>
