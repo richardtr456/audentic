@@ -10,8 +10,9 @@ class sesionActiva implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if(!session('rol')==['secretaria','admin'])
+        if(!session('rol')=='admin'||!session('rol')=='secretary'){
             return redirect()->to(base_url('/login'));
+        }
     }
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {

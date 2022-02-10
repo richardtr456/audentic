@@ -122,6 +122,7 @@
 
 	<!-- Datatables -->
 	<script src="<?php echo base_url('public/js/plugin/datatables/datatables.min.js');?>"></script>
+	
 
 	<!-- Bootstrap Notify -->
 	<script src="<?php echo base_url('public/js/plugin/bootstrap-notify/bootstrap-notify.min.js');?>"></script>
@@ -139,6 +140,37 @@
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="<?php echo base_url('public/js/setting-demo.js');?>"></script>
 	<script src="<?php echo base_url('public/js/demo.js');?>"></script>
+	<script>
+    $(document).ready( function () {
+      $('#users-list').DataTable({
+		  "language":{
+			  "url": "<?php echo base_url('public/json/datatable_spanish.json')?>"
+		  },
+		//   'columnDefs': [
+        //    {
+        //         "targets": 0, // your case first column
+        //         "className": "text-center",
+		// 		"width": "2%"
+        //   }, 
+		// {
+		// 		"targets": 3,
+		// 		"className": "text-center",
+		// 		"width": "10%"
+		// }  , 
+		// {
+		// 		"targets": 4,
+		// 		"className": "text-center",
+		// 		"width": "5%"
+		// } ,  
+		// {
+		// 		"targets": 5,
+		// 		"className": "text-center",
+		// 		"width": "5%"
+		// }         
+        // ]
+	  });
+  } );
+</script>
 	<script>
 		Circles.create({
 			id:'circles-1',

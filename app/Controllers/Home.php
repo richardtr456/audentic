@@ -24,12 +24,28 @@ class Home extends BaseController
 
 
     public function autenticar(){
-        //var_dump($_POST);
+        
         $usuario=$this->request->getPost('usuario');
         $contrasena=$this->request->getPost('contrasena');
         $modelo_usuario=new Usuario();
-        $data = $modelo_usuario->obtenerUsuario(['usuario'=>$usuario]);
+        $data = $modelo_usuario->obtenerUsuario(['usuario'=>trim($usuario)]);
+        /*$password=password_hash($contrasena,PASSWORD_BCRYPT);
+        print_r($data);
+        echo '<p></p>';
+        print_r($data[0]);
+        echo '<p></p>';
+        echo $data[0]['contrasena'];
+        echo '<p></p>';
+        echo $password;
         
+
+        if(password_verify($password,$data[0]['contrasena'])){
+            echo 'si';
+        }
+        else{
+            echo 'no';
+        }
+        return view('user/test_user');*/
         if(count($data)>0 && password_verify($contrasena,$data[0]['contrasena'])){
             $sesion=session();
             $sesion->set(['usuario'=>$data[0]['usuario'],'rol'=>$data[0]['rol']]);
@@ -45,7 +61,12 @@ class Home extends BaseController
     }
 
     public function menu(){
-        return view('menu/1-libreria').view('menu/2-header').view('menu/3-sidenav').view('menu/4-sidebar').view('menu/5-content').view('menu/6-footer');
+        echo view('menu/1-libreria');
+        echo view('menu/2-header');
+        echo view('menu/3-sidenav');
+        echo view('menu/4-sidebar');
+        echo view('dashboard/dashboard_visualizar');
+        echo view('menu/6-footer');
     }
 
     public function salir(){

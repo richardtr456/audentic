@@ -33,9 +33,52 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
-$routes->get('/menu', 'Home::menu');
+
 $routes->get('/salir', 'Home::salir');
 $routes->post('/autenticar', 'Home::autenticar');
+
+// ENCAPSULAR MENU-RUTAS
+$routes->group('/menu',["filter" => "sesionActiva"], function ($routes) {
+    $routes->get('/', 'Home::menu');
+    $routes->group('usuarios', function ($routes) {
+        //* :para visualizar los usuarios
+        $routes->get('/', 'Usuarios::index');
+            //? :para crear los usuarios
+        $routes->get('crear_usuario', 'Usuarios::crearUsuario');
+        $routes->post('registrar', 'Usuarios::registrar');
+        //TODO: para editar los usuarios
+        $routes->get('editar/(:any)', 'Usuarios::editar/$1');
+        $routes->post('actualizar', 'Usuarios::actualizar');
+        //! : para eliminar los usuarios
+        $routes->get('eliminar/(:any)', 'Usuarios::eliminar/$1');
+    });
+
+});
+
+
+//Usuarios
+    
+    
+    // $routes->get('/menu/usuarios/editar/(:any)', 'Usuarios::editar/$1');
+    // $routes->post('/menu/usuarios/actualizar', 'Usuarios::actualizar');
+    
+
+    
+    // $routes->post('/comprobar', 'Usuarios::getUsuario');
+    
+
+
+
+
+
+
+// $routes->get('/', 'Crud::index');
+// $routes->get('/obtenerNombre/(:any)', 'Crud::obtenerNombre/$1');
+// $routes->get('/eliminar/(:any)', 'Crud::eliminar/$1');
+// $routes->post('/crear', 'Crud::crear');
+// $routes->post('/actualizar', 'Crud::actualizar');
+
+
 
 
 //$routes->get('(:any)', 'Pages::view/$1');

@@ -1,11 +1,9 @@
-<!-- COMO PLANTILLA OJITO -->
-
 
 <div class="content">
 	<!-- <?php echo session('usuario')?> -->
 	<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Administrador(es)</h4>
+						<h4 class="page-title">Dashboard</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
 								<a href="#">
@@ -22,19 +20,12 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title">Lista de administradores</div>
+									<div class="card-title">Dashboard</div>
 								</div>
 								<div class="card-body">
 									<div class="row">
 										<div class="col-md-12">
-											<div class="row">
-												<div class="col-md-12">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-md-12">
-												</div>
-											</div>
+											Vista de Dashboard
 										</div>
 								    </div>
 								</div>
@@ -44,4 +35,3 @@
 					</div>
 				</div>			
 </div>
-
