@@ -22,7 +22,7 @@
                   <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style="width: 185px;" alt="logo">
                   <h4 class="mt-1 mb-5 pb-1">TEAM CHOCLITO</h4>
                 </div>
-
+                https://localhost/audentic/autenticar
                 <form action="<?php echo base_url('autenticar') ?>" method="post">
                   <p>Por favor, acceda a su cuenta</p>
 
