@@ -64,7 +64,12 @@
 								<p>Administradores</p>
 							</a>
 						</li>
-						
+						<li class="nav-item">
+							<a href="<?php echo base_url();?>/menu/pacientes">
+								<i class="fas fa-layer-group"></i>
+								<p>Pacientes</p>
+							</a>
+						</li>
 						
 					</ul>
 				</div>
