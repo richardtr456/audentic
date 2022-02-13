@@ -1,3 +1,2 @@
 <?php
-
-echo $dato1." ";
+print_r($especialidades);

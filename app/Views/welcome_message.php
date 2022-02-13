@@ -8,7 +8,9 @@
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 	<!-- PAGINA POR DEFECTO -->
 	<!-- STYLES -->
-	
+	<?php
+	print_r( $data);
+	?>
 	<style {csp-style-nonce}>
 		* {
 			transition: background-color 300ms ease, color 300ms ease;
