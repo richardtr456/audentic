@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Profesional extends Model
+class Profe_Espec extends Model
 {
-    protected $table      = 'profesional';
+    protected $table      = 'esp_profesional';
     protected $primaryKey = 'id_profesional';
 
-    protected $useAutoIncrement = true;
+    protected $useAutoIncrement = false;
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['cv', 'nombre','telefono'];
+    protected $allowedFields = ['id_especialidad','id_profesional'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
@@ -25,7 +25,7 @@ class Profesional extends Model
     protected $validationMessages = [];
     protected $skipValidation     = false;
 
-    public function registrarProfesional($data){
+    public function registrarProfeEspec($data){
             return $this->insert($data);
     }
 
@@ -35,16 +35,8 @@ class Profesional extends Model
         return $usuario->get()->getResultArray();
     }
     //para la lista de usuarios(admin y secretaria en el sistema)
-    public function listarProfesionales() {
-         $Registros = $this->db->query("SELECT c.id_profesional as id_profesional,
-                                                c.nombre as nombre,
-                                                c.cv as cv,
-                                                GROUP_CONCAT(b.nombre_esp SEPARATOR ',') as especialidades,
-                                                c.telefono as telefono from esp_profesional a 
-                                                INNER JOIN especialidad b 
-                                                on a.id_especialidad=b.id_especialidad inner join profesional c 
-                                                on c.id_profesional=a.id_profesional group by c.id_profesional
-                                                order by c.id_profesional,b.nombre_esp;");
+    public function listarProfeEspec() {
+         $Registros = $this->db->query("SELECT * FROM esp_profesional");
          return $Registros->getResult();
      }
      public function actualizar($data, $idLogin) {
@@ -62,3 +54,4 @@ class Profesional extends Model
      }
     
 }
+

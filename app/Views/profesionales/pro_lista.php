@@ -75,8 +75,9 @@
 												<tr>
 													<th scope="col">Id</th>
 													<th scope="col">Nombres</th>
-													<th scope="col">Curriculum</th>													
-													<th scope="col">Telefono</th>
+													<th scope="col">Curriculum</th>	
+                                                    <th scope="col">Especialidades</th>												
+													<th scope="col">Telefono</th>                                                    
 													<th scope="col">Acciones</th>
 												</tr>
 												</tr>
@@ -90,6 +91,8 @@
 													<td><?php echo $user-> nombre; ?></td>
                                                     <!-- en el cv debe redireccionar a un enlace al pdf para ver su cv -->
 													<td><?php echo $user-> cv; ?></td>
+													<td><?php echo $user-> especialidades; ?></td>
+
 													<td><?php echo $user-> telefono?></td>
 													<td>
                                                     <button type="button" class="editbtn btn btn-primary btn-sm editbtn" data-bs-toggle="modal" data-bs-target="#editar">
@@ -170,23 +173,28 @@
                             <div class="mostrarmensaje"></div>
                           </div>   
                           <div class="form-group">
-                            <label>CV</label>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Especialidad
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <?php foreach($especialidades as $especialidad): ?>
-                                        <?php echo '<li><a class="dropdown-item" href="#">'.$especialidad->nombre_esp.'</a><button id=agregarespecialidad>+</button></li>';?> 
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>         
+                            <label>Asignar especialidad</label><br>
+                            <select id="select-especialidad" class="form-select" aria-label="Default select example">
+                                <option disabled selected>Open this select menu</option>
+                                <?php foreach($especialidades as $especialidad): ?>
+                                    <?php echo '<option attribute="'.$especialidad->nombre_esp.'" value="'.$especialidad->id_especialidad.'">'.$especialidad->nombre_esp.'</option>';?> 
+                                <?php endforeach; ?>                                
+                            </select>   
+                            <button type="button" id="agregarespecialidad" onclick="mostrar()">+</button>
                                 <div class="mostrarmensaje"></div>
                           </div>   
                           <div class="form-group">
-                              <div class="new_especialidades">
-
-                              </div>
+                            <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                <th scope="col">Especialidad</th>
+                                <th scope="col">Accion</th>
+                                </tr>
+                            </thead>
+                            <tbody id="new-especialidades">
+                                <!-- aqui se agrega las especialidades de cada profesional                  -->
+                            </tbody>
+                            </table>
                           </div>
                                   
 
@@ -223,12 +231,36 @@
                             <input type="text" id="cv" name="cv" class="form-control" >
                             <div class="mostrarmensaje"></div>
                     </div>   
+                    
                     <div class="form-group">
                             <label>Telefono</label>
                             <input type="text" id="telefono" name="telefono" class="form-control" >
                             <div class="mostrarmensaje"></div>
                     </div>  
-                     
+                    <div class="form-group">
+                            <label>Asignar especialidad</label><br>
+                            <select id="select-edit-especialidad" class="form-select" aria-label="Default select example">
+                                <option disabled selected>Open this select menu</option>
+                                <?php foreach($especialidades as $especialidad): ?>
+                                    <?php echo '<option attribute="'.$especialidad->nombre_esp.'" value="'.$especialidad->id_especialidad.'">'.$especialidad->nombre_esp.'</option>';?> 
+                                <?php endforeach; ?>                                
+                            </select>   
+                            <button type="button" id="edagregarespecialidad" onclick="edmostrar()">+</button>
+                                <div class="mostrarmensaje"></div>
+                          </div>   
+                          <div class="form-group">
+                            <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                <th scope="col">Especialidad</th>
+                                <th scope="col">Accion</th>
+                                </tr>
+                            </thead>
+                            <tbody id="edit-especialidades">
+                                <!-- aqui se agrega las especialidades de cada profesional                  -->
+                            </tbody>
+                            </table>
+                    </div>
                     <!--footer de tabla-->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -244,7 +276,7 @@
 
 
 
-
+<script src="<?php echo base_url('public/js/pro_lista.js');?>"></script>
 
  <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -327,6 +359,7 @@
 
 <script>
         $('.editbtn').on('click', function(){
+            $("#edit-especialidades").empty();
             //console.log("hola");
             $tr = $(this).closest('tr');
             var datos = $tr.children("td").map(function(){
@@ -335,8 +368,94 @@
             $('#update_id').val(datos[0]);
             $('#nombres').val(datos[1]);
             $('#cv').val(datos[2]);
-            $('#telefono').val(datos[3]);            
+            console.log(datos[3]);
+            arreglo_esp=datos[3].split(',');
+            //['Extraccion','Ortodoncia']
+            let arreglo_limpio=new Array();
+            <?php foreach($especialidades as $especialidad): ?>
+                arreglo_limpio['<?php echo $especialidad->id_especialidad ;?>']='<?php echo $especialidad->nombre_esp;?>';
+            <?php endforeach;?>
+            console.log(arreglo_limpio);
+            arreglo_esp.forEach(element => {
+                for(let indice in arreglo_limpio){
+                    if(element==arreglo_limpio[indice]){
+                        console.log(indice);
+                        let tupla =
+                        '<tr><th  value="' +
+                        indice +
+                        '" scope="row">' +
+                        element +
+                        "</th>" +
+                        '<input type="hidden" name="pro_ed_especialidad[]" value="' +
+                        indice +
+                        '">' +
+                        "<td><button type='button' class=" +
+                        '"restar-especialidad"' +
+                        ">-</button></td></tr>";
+                        $("#edit-especialidades").append(tupla);
+                    }
+                }                
+            });
+            $('#telefono').val(datos[4]);            
         });
+        $(function () {
+    $(document).on('click', '.restar-especialidad', function (event) {
+        event.preventDefault();
+        $(this).closest('tr').remove();
+        });
+    });
         //console.log("hola afuera");
+</script>
+<script>
+    
+//esta funcion es para añadir
+function edmostrar() {
+  speciality = document.getElementById("select-edit-especialidad");
+  //   console.log(speciality.value);
+  //   console.log(speciality.selectedOptions[0].innerText);
+  let bandera = edverificar(parseInt(speciality.value));
+  if (bandera) {
+    let registro =
+      '<tr><th  value="' +
+      speciality.value +
+      '" scope="row">' +
+      speciality.selectedOptions[0].innerText +
+      "</th>" +
+      '<input type="hidden" name="pro_ed_especialidad[]" value="' +
+      speciality.value +
+      '">' +
+      "<td><button type='button' class=" +
+      '"restar-especialidad"' +
+      ">-</button></td></tr>";
+
+    $("#edit-especialidades").append(registro);
+  } else {
+    console.log("YA EXISTE");
+  }
+}
+
+function edverificar(nuevovalor) {
+  const tabla = document.getElementById("edit-especialidades").children;
+  let arreglo = [];
+  for (let i = 0; i < tabla.length; i++) {
+    const element = parseInt(tabla[i].childNodes[0].attributes[0].value);
+    console.log(element);
+    arreglo.push(element);
+    // console.log(element.childNodes[0].attributes);
+  }
+  if (arreglo.length > 0) {
+    let valor = arreglo.filter((numero) => numero == nuevovalor);
+    console.log(valor);
+    if (valor.length == 0) {
+      console.log("noexistey lo agrego");
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return true;
+  }
+  //   console.log(tabla[0].childNodes[0]);
+}
 </script>
 
