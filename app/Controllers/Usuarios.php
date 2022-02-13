@@ -64,7 +64,7 @@ class Usuarios extends BaseController{
 			'dni_log' => $dni,
 			'telefono_log' => $telefono,
 		];
-		$idLogin = $usuario= $this->request->getPost('idLogin');;
+		$idLogin = $this->request->getPost('idLogin');;
 
 		$Crud = new Usuario();
 

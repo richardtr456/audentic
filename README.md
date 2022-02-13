@@ -61,3 +61,11 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
 - xml (enabled by default - don't turn it off)
+
+
+## Errores y sus hipotesis
+MUCHANCHOS SI HAY ERROR EN EL BOTON DE EDITAR AL MOMENTO DE NO TRAER LOS DATOS AL MODAL, puede deberse al siguiente problema:
+
+- en el modal de insertar un registro, revisamos que tenga solo el name, mas no el id, el 'id' no debe estar en los inputs en el modal de insercion.
+
+-el id solo puede estar en el modal de edicion 

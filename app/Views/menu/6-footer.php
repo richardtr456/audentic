@@ -171,6 +171,7 @@
 	  });
   } );
 </script>
+
 	<script>
 		Circles.create({
 			id:'circles-1',
@@ -265,5 +266,8 @@
 			fillColor: 'rgba(255, 165, 52, .14)'
 		});
 	</script>
+	<?php timer('render view');
+        echo timer()->getElapsedTime('render view');?>
+	
 </body>
 </html>

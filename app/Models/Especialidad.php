@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Paciente extends Model
+class Especialidad extends Model
 {
-    protected $table      = 'usuario';
-    protected $primaryKey = 'id_usuario';
+    protected $table      = 'especialidad';
+    protected $primaryKey = 'id_especialidad';
 
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['DNI', 'nombre_usu','apellido_usu','sexo','telefono','correo'];
+    protected $allowedFields = ['nombre_esp', 'descripcion'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
@@ -25,7 +25,7 @@ class Paciente extends Model
     protected $validationMessages = [];
     protected $skipValidation     = false;
 
-    public function registrarPaciente($data){
+    public function registrarEspecialidad($data){
             return $this->insert($data);
     }
 
@@ -35,8 +35,8 @@ class Paciente extends Model
         return $usuario->get()->getResultArray();
     }
     //para la lista de usuarios(admin y secretaria en el sistema)
-    public function listarPacientes() {
-         $Registros = $this->db->query("SELECT * FROM usuario");
+    public function listarEspecialidades() {
+         $Registros = $this->db->query("SELECT * FROM especialidad");
          return $Registros->getResult();
      }
      public function actualizar($data, $idLogin) {

@@ -15,8 +15,7 @@
     border: 1px solid red;
     font-weight: 300;
     color: red;
-    }
-    
+    }    
   </style>
 
 <div class="content">
@@ -192,10 +191,9 @@
                 },
                 rol:{
                     required:"Especifique el tipo de usuario",
-                }
-                
+                }                
                 },
             })
-            }
+          }
   </script>
   

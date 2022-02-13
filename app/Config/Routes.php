@@ -53,7 +53,7 @@ $routes->group('/menu',["filter" => "sesionActiva"], function ($routes) {
         $routes->get('eliminar/(:any)', 'Usuarios::eliminar/$1');
     });    
     $routes->group('pacientes', function ($routes) {
-        https://localhost/audentic/menu/pacientes/registrar
+        // https://localhost/audentic/menu/pacientes/registrar
         //* :para visualizar los pacientes
         $routes->get('/', 'Pacientes::index');
         //? :para crear los pacientes
@@ -61,7 +61,32 @@ $routes->group('/menu',["filter" => "sesionActiva"], function ($routes) {
         //TODO: para editar los pacientes
         $routes->post('actualizar', 'Pacientes::actualizar');
         //! : para eliminar los pacientes
-        $routes->get('eliminar/(:any)', 'Usuarios::eliminar/$1');
+        // $routes->get('eliminar/(:any)', 'Usuarios::eliminar/$1');
+        //! reporte falta hacer ajustes
+        // $routes->get('reporte', 'Pacientes::reporte');
+
+    });
+    $routes->group('profesionales', function ($routes) {
+        // https://localhost/audentic/menu/pacientes/registrar
+        //* :para visualizar los pacientes
+        $routes->get('/', 'Profesionales::index');
+        //? :para crear los pacientes
+        $routes->post('registrar', 'Profesionales::registrar');
+        //TODO: para editar los pacientes
+        $routes->post('actualizar', 'Profesionales::actualizar');
+        //! : para eliminar los pacientes
+        $routes->get('eliminar/(:any)', 'Profesionales::eliminar/$1');
+    });
+    $routes->group('especialidades', function ($routes) {
+        // https://localhost/audentic/menu/pacientes/registrar
+        //* :para visualizar los pacientes
+        $routes->get('/', 'Especialidades::index');
+        //? :para crear los pacientes
+        $routes->post('registrar', 'Especialidades::registrar');
+        //TODO: para editar los pacientes
+        $routes->post('actualizar', 'Especialidades::actualizar');
+        //! : para eliminar los pacientes
+        $routes->get('eliminar/(:any)', 'Especialidades::eliminar/$1');
     });
 
 });

@@ -39,7 +39,9 @@
 												<div class="col-md-12">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#insertar">
                                                 Nuevo
-                                            </button>                                                    
+                                            </button>   
+                                            <a class="btn btn-light " href="<?php echo base_url('menu/pacientes/reporte')?>" role="button">Export</a>
+                                                 
                         <!-- <p><a href="<?php echo base_url('menu/usuarios/crear_usuario') ?>" class="btn btn-primary">Añadir administrador</a></p> -->
 												</div>
 											</div>
@@ -154,68 +156,68 @@
                 
             </div>
         </div>
-    </div>
+ </div>
 
     <!-- Modal editar registro existente-->
-    <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Editar Registro</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!--Formulario de registro de nuevo paciente -->
-                    <form action="<?php echo base_url('menu/pacientes/actualizar')?>" method="POST" >
-                        <input type="hidden" name="id" id="update_id">
-
-                        <div class="form-group"> <!-- -------------------------------- -->
-                            <label for="">DNI</label>
-                            <input type="text" name="dni" id="dni" class="form-control">
-                        </div>
-                        
-                        <div class="form-group"> <!-- -------------------------------- -->
-                            <label for="">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" class="form-control">
-                        </div>
-
-                        <div class="form-group"> <!-- -------------------------------- -->
-                            <label for="">Apellido</label>
-                            <input type="text" name="apellido" id="apellido" class="form-control">
-                        </div>
-                        <br>
-
-                        <div class="form-group"> <!-- -------------------------------- -->
-                            <label for="">Sexo</label>
-                            <select name="sexo" id="sexo" class="form-control">
-                                <option value="H">Masculino</option>
-                                <option value="M">Femenino</option>                                
-                            </select>
-                        </div>
-                        <br>
-
-                        <div class="form-group"> <!-- -------------------------------- -->
-                            <label for="">Teléfono</label>
-                            <input type="text" name="telefono"  id="telefono" class="form-control">
-                        </div>
-
-                        <div class="form-group"> <!-- -------------------------------- -->
-                            <label for="">Correo</label>
-                            <input type="text" name="correo" id="correo" class="form-control">
-                        </div>                     
-
-                        <!--footer de tabla-->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                        </div>
-                    </form>
-
-                </div>
-                
+<div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Registro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+                <!--Formulario de registro de nuevo paciente -->
+                <form action="<?php echo base_url('menu/pacientes/actualizar')?>" method="POST" >
+                    <input type="hidden" name="id" id="update_id">
+
+                    <div class="form-group"> <!-- -------------------------------- -->
+                        <label for="">DNI</label>
+                        <input type="text" name="dni" id="dni" class="form-control">
+                    </div>
+                    
+                    <div class="form-group"> <!-- -------------------------------- -->
+                        <label for="">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" class="form-control">
+                    </div>
+
+                    <div class="form-group"> <!-- -------------------------------- -->
+                        <label for="">Apellido</label>
+                        <input type="text" name="apellido" id="apellido" class="form-control">
+                    </div>
+                    <br>
+
+                    <div class="form-group"> <!-- -------------------------------- -->
+                        <label for="">Sexo</label>
+                        <select name="sexo" id="sexo" class="form-control">
+                            <option value="H">Masculino</option>
+                            <option value="M">Femenino</option>                                
+                        </select>
+                    </div>
+                    <br>
+
+                    <div class="form-group"> <!-- -------------------------------- -->
+                        <label for="">Teléfono</label>
+                        <input type="text" name="telefono"  id="telefono" class="form-control">
+                    </div>
+
+                    <div class="form-group"> <!-- -------------------------------- -->
+                        <label for="">Correo</label>
+                        <input type="text" name="correo" id="correo" class="form-control">
+                    </div>                     
+
+                    <!--footer de tabla-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                </form>
+
+            </div>
+            
         </div>
     </div>
+</div>
     
 
 

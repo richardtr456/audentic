@@ -71,17 +71,19 @@ class Pacientes extends BaseController{
 			return redirect()->to(base_url('/menu/pacientes'))->with('mensaje','3');
 		}
 	}   
-
-	public function eliminar($idLogin){
-		$Crud = new Usuario();
-		$data = ["idLogin" => $idLogin];
-
-		$respuesta = $Crud->eliminar($data);
-
-		if ($respuesta) {
-			return redirect()->to(base_url().'/menu/usuarios')->with('mensaje','4');
-		} else {
-			return redirect()->to(base_url().'/menu/usuarios')->with('mensaje','5');
-		}
+	public function reporte(){
+		echo view('pacientes/pacientes_reporte');
 	}
+	// public function eliminar($idLogin){
+	// 	$Crud = new Usuario();
+	// 	$data = ["idLogin" => $idLogin];
+
+	// 	$respuesta = $Crud->eliminar($data);
+
+	// 	if ($respuesta) {
+	// 		return redirect()->to(base_url().'/menu/usuarios')->with('mensaje','4');
+	// 	} else {
+	// 		return redirect()->to(base_url().'/menu/usuarios')->with('mensaje','5');
+	// 	}
+	// }
 }

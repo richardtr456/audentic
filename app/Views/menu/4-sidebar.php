@@ -52,7 +52,13 @@
 							<h4 class="text-section">Components</h4>
 						</li>
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#base">
+							<a href="<?php echo base_url();?>/menu/especialidades">
+								<i class="fas fa-layer-group"></i>
+								<p>Especialidades</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="<?php echo base_url();?>/menu/profesionales">
 								<i class="fas fa-layer-group"></i>
 								<p>Profesionales</p>
 							</a>

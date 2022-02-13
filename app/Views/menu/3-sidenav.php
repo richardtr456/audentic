@@ -246,7 +246,7 @@
 										<a class="dropdown-item" href="#">My Balance</a>
 										<a class="dropdown-item" href="#">Inbox</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Account Setting</a>
+										<a class="dropdown-item" href="#">Configurar tu cuenta</a>
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="<?php echo base_url('/salir')?>">Logout</a>
 									</li>
