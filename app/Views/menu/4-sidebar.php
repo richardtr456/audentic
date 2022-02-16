@@ -5,13 +5,13 @@
 					
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<img src="<?php echo base_url('public/img/profile.jpg');?>" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
+									<?php echo session('usuario')?> 
+									<span class="user-level"><?php echo session('rol')?> </span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -21,17 +21,17 @@
 								<ul class="nav">
 									<li>
 										<a href="#profile">
-											<span class="link-collapse">My Profile</span>
+											<span class="link-collapse">Mi perfil</span>
 										</a>
 									</li>
 									<li>
 										<a href="#edit">
-											<span class="link-collapse">Edit Profile</span>
+											<span class="link-collapse">Editar perfil</span>
 										</a>
 									</li>
 									<li>
 										<a href="#settings">
-											<span class="link-collapse">Settings</span>
+											<span class="link-collapse">Preferencias</span>
 										</a>
 									</li>
 								</ul>
@@ -76,7 +76,30 @@
 								<p>Pacientes</p>
 							</a>
 						</li>
-						
+						<li class="nav-item">
+							<a href="<?php echo base_url();?>/menu/pacientes">
+								<i class="fas fa-layer-group"></i>
+								<p>Servicios</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="<?php echo base_url();?>/menu/pacientes">
+								<i class="fas fa-layer-group"></i>
+								<p>Tratamientos</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="<?php echo base_url();?>/menu/pacientes">
+								<i class="fas fa-layer-group"></i>
+								<p>Pagos</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="<?php echo base_url();?>/menu/pacientes">
+								<i class="fas fa-layer-group"></i>
+								<p>Tipos de pago</p>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>

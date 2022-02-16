@@ -4,24 +4,24 @@
 						<ul class="nav">
 							<li class="nav-item">
 								<a class="nav-link" href="https://www.themekita.com">
-									ThemeKita
+									Referencias
 								</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">
-									Help
+									Ayuda
 								</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">
-									Licenses
+									Licencia
 								</a>
 							</li>
 						</ul>
 					</nav>
-					<div class="copyright ml-auto">
-						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
-					</div>				
+					<!-- <div class="copyright ml-auto">
+						2022, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+					</div>				 -->
 				</div>
 			</footer>
 		</div>
@@ -139,7 +139,7 @@
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="<?php echo base_url('public/js/setting-demo.js');?>"></script>
-	<script src="<?php echo base_url('public/js/demo.js');?>"></script>
+	<!-- <script src="<?php echo base_url('public/js/demo.js');?>"></script> -->
 	<script>
     $(document).ready( function () {
       $('#users-list').DataTable({

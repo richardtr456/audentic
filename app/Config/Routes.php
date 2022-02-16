@@ -88,6 +88,17 @@ $routes->group('/menu',["filter" => "sesionActiva"], function ($routes) {
         //! : para eliminar los pacientes
         $routes->get('eliminar/(:any)', 'Especialidades::eliminar/$1');
     });
+    $routes->group('servicios', function ($routes) {
+        // https://localhost/audentic/menu/pacientes/registrar
+        //* :para visualizar los pacientes
+        $routes->get('/', 'Servicios::index');
+        //? :para crear los pacientes
+        $routes->post('registrar', 'Servicios::registrar');
+        //TODO: para editar los pacientes
+        $routes->post('actualizar', 'Servicios::actualizar');
+        //! : para eliminar los pacientes
+        $routes->get('eliminar/(:any)', 'Servicios::eliminar/$1');
+    });
 
 });
 
