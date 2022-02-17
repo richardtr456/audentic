@@ -40,6 +40,8 @@ $routes->post('/autenticar', 'Home::autenticar');
 // ENCAPSULAR MENU-RUTAS
 $routes->group('/menu',["filter" => "sesionActiva"], function ($routes) {
     $routes->get('/', 'Home::menu');
+    $routes->post('consultar', 'Home::consultar');
+
     $routes->group('usuarios', function ($routes) {
         //* :para visualizar los usuarios
         $routes->get('/', 'Usuarios::index');
@@ -99,6 +101,34 @@ $routes->group('/menu',["filter" => "sesionActiva"], function ($routes) {
         //! : para eliminar los pacientes
         $routes->get('eliminar/(:any)', 'Servicios::eliminar/$1');
     });
+    $routes->group('tratamientos', function ($routes) {
+        // https://localhost/audentic/menu/pacientes/registrar
+        //* :para visualizar los pacientes
+        $routes->get('/', 'Tratamientos::index');
+        //? :para crear los pacientes
+        $routes->post('registrar', 'Tratamientos::registrar');
+        //TODO: para editar los pacientes
+        $routes->post('actualizar', 'Tratamientos::actualizar');
+        //! : para eliminar los pacientes
+        $routes->get('eliminar/(:any)', 'Tratamientos::eliminar/$1');
+        
+        
+    });
+    $routes->group('sesiones', function ($routes) {
+        // https://localhost/audentic/menu/pacientes/registrar
+        //* :para visualizar los pacientes
+        $routes->get('/', 'Sesiones::index');
+        $routes->get('cargar/(:any)', 'Sesiones::cargar/$1');
+
+        //? :para crear los pacientes
+        $routes->post('registrar', 'Sesiones::registrar');
+        //TODO: para editar los pacientes
+        $routes->post('actualizar', 'Sesiones::actualizar');
+        //! : para eliminar los pacientes
+        $routes->get('eliminar/(:any)', 'Sesiones::eliminar/$1');
+    });
+    
+    
 
 });
 

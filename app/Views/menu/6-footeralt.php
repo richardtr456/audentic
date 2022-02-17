@@ -100,8 +100,20 @@
 	</div>
 	
 	<!--   Core JS Files   -->
-	<script src="<?php echo base_url('public/js/core/jquery.3.2.1.min.js');?>"></script>
-	<script src="<?php echo base_url('public/js/core/popper.min.js');?>"></script>
+    <script>
+    // In your Javascript (external .js resource or <script> tag)
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>	
+
+<script>
+    $('#mySelect2').select2({
+        dropdownParent: $('#insertar')
+    });
+</script>
+
+<script src="<?php echo base_url('public/js/core/popper.min.js');?>"></script>
 	<script src="<?php echo base_url('public/js/core/bootstrap.min.js');?>"></script>
 
 	<!-- jQuery UI -->

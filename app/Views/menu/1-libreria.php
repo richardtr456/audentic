@@ -17,13 +17,13 @@
 			}
 		});
 	</script>
-
+	
 	<!-- CSS Files -->
 	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="<?php echo base_url('public/css/bootstrap.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('public/css/atlantis.min.css');?>">
 	<link rel="stylesheet" href="<?php echo base_url('public/css/sweetalert.min.css'); ?>">
-
+	
 	
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="<?php echo base_url('public/css/demo.css');?>">

@@ -1,0 +1,697 @@
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#imagenpresentacion{
+    padding: 120px 20px 0px 20px;
+background-color: rgba(235, 230, 230, 0.993);
+}
+.slider{
+    width: 100%;
+    margin: auto;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slider ul{
+    padding: 0px;
+    display: flex;
+    width: 400%;
+
+    animation: slider 15s infinite alternate;
+    animation-timing-function: linear;
+}
+
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider li img{
+    width: 110%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform-style: preserve-3d;
+}
+
+@keyframes slider{
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+body{
+    font-family: 'Roboto', Sans-serif;
+    margin: 0;
+    background: #b4bcc4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eef2f3, #dbe5ec);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eef2f3, #dadada); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+}
+
+h1{ 
+    font-size: 2.5em;
+}
+h2{ font-size: 2.7em;}
+h3{ font-size: 2em; }
+h4{ font-size: 1.5em;}
+p{ font-size: 1.25em;}
+
+
+button{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5) ;
+    color: white;
+    background-color: rgb(19, 142, 158);
+}
+button:hover{
+    background-color: rgb(7, 63, 100);
+}
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+.color-acento{color: rgb(19, 142, 158);}
+.consultorio{color: rgb(53, 153, 167); font-size: 15px;}
+header{
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+
+header .imagen{
+    display: flex;
+}
+header img{
+    padding: 5px 0px 10px 20px;
+}
+header .logo{
+    margin: 0;
+    font-weight: bold;
+    font-family: "Oswald",Verdana,sans-serif !important;
+    color: rgb(19, 142, 158);
+    font-size: 20px;
+    flex-direction: row;
+    padding: 10px 0px 0px 10px;
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 25px;
+}
+header a{
+    padding: 5px 12px;
+    font-size: 13px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    color: black;
+}
+
+header a:hover{
+    color: white;
+    background-color: #6d6d7e;
+}
+
+.portada{
+    color: rgb(238, 237, 237);
+    height: 100%;
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;    
+}
+
+#imagenpresentacion p{
+    font-size: 15px;
+    margin: 0;
+    color: rgba(250, 250, 250, 0.918);
+}
+
+.portada h3{
+    font-size: 32px;
+    margin: 0;
+}
+
+@media (min-width: 720px){
+    header{
+        position: fixed;
+        width: 100%;
+    }
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }  
+    footer .datos{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #Tratamientos .contenedor0{
+        grid-template-columns: 1fr 1fr 1fr;
+        }
+    #Especialistas .contenedor0{
+        grid-template-columns: 1fr 1fr;
+        }
+}
+@media (max-width: 720px){
+    #intro .contenedor{
+        flex-direction: column;   
+        }
+    #reservarcita .contenedor{
+        flex-direction: column;  
+    }
+}
+
+#intro {
+    min-height: 100vh;
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ebe9e7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fffbfb, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#intro .contenedor{
+    text-align: center;
+    padding: 100px 30px;
+    display: flex;
+    justify-content: center;
+}
+#intro .intro-texto{
+    width: 100%;
+    margin: auto;
+    text-align: initial;
+    max-width: 700px;
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    justify-content:  center;
+}
+
+
+#intro img{
+    border-radius: 6px;
+    box-shadow: 0px 15px 25px 
+    rgb(0,0,0,0.50);
+}
+
+#intro h2{
+    font-size: 40px;
+    margin: 30px;
+    color: #4D4D5C;
+    text-align: center;
+}
+
+#intro p{
+    font-weight: normal;
+    font-family: 'Raleway';
+    text-align: center;
+}
+
+/*TRATAMIENTOS*/
+#Especialistas{
+    padding: 50px;
+    background-size: cover;
+    background: #8e9eab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eef2f3, #aeb3b8);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eef2f3, #c2c4c5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+#Especialistas .contenedor0{
+    padding: 0px;
+    display: grid;
+    justify-content: center;
+    text-align: center; 
+}
+#Especialistas img{
+    background-size: cover;
+    border-radius: 100%;
+    box-shadow: 0px 10px 10px 
+    rgba(66, 66, 66, 0.5);
+
+}
+#Especialistas div{
+    padding: 25px;
+}
+#Especialistas .contendor{
+    padding: 15px;
+}
+#Especialistas div h4{
+    color: #000000;
+    font-size: 20px;
+    margin: 15px 0px;
+}
+#Especialistas div p{
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+}
+
+#Especialistas .titulocolor{
+    font-size: 32px;
+    color:rgba(27, 27, 27, 0.712);
+    font-weight: bold;
+}
+#Especialistas h5{
+    font-size: 32px;
+    margin: 20px 20px 0px 20px;
+    color:rgba(27, 27, 27, 0.74);
+    font-weight: normal;
+    font-family: 'Raleway';
+}
+
+#Especialistas hr { 
+    border: none; 
+    height: 4px; 
+    width: 160px;
+    background-color: rgb(7, 163, 142); 
+    margin: 7px 25px 25px 23px;
+}
+
+
+
+/*TRATAMIENTOS*/
+#Tratamientos{
+    padding: 100px 0px 0px 0px;
+    font-family: Montserrat,sans-serif;
+    background-image: url(https://www.pacificdental.pe/wp-content/uploads/2016/09/parallax-3.jpg);
+    background-size: cover;
+    background-position: 50% -90px;
+}
+#Tratamientos .contenedor0{
+    padding: 20px;
+    display: grid;
+    grid-gap: 20px 20px;
+    justify-content: center;
+    text-align: center; 
+}
+#Tratamientos img{
+    background-size: cover;
+    border-radius: 5px;
+}
+#Tratamientos div{    
+    padding: 0px;
+}
+#Tratamientos .contenedor{
+    color: #6c757d;
+    padding: 10px 0px 0px 0px;
+    background-color: #fff;
+}
+#Tratamientos div h4{
+    color: #4D4D5C;
+    font-size: 20px;
+    margin: 15px 0px;
+}
+#Tratamientos div p{
+    color: #6d6d7e;
+    font-size: 15px;
+    text-align: center;
+    padding: 0px 20px 20px 20px;
+}
+
+#Tratamientos .titulocolor{
+    font-size: 32px;
+    color:rgb(255, 255, 255);
+    font-weight: bold;
+}
+#Tratamientos h5{
+    font-size: 32px;
+    margin: 20px 20px 0px 20px;
+    color: #f1f1f1;
+    font-weight: normal;
+    font-family: 'Raleway';
+}
+
+#Tratamientos hr { 
+    border: none; 
+    height: 4px; 
+    width: 160px;
+    background-color: rgb(202, 226, 223); 
+    margin: 7px 25px 25px 23px;
+}
+
+#Visualizarcita
+{
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6d8c9b, #18627a, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #7794a0, #1c6a85, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    min-height: 100vh;
+}
+
+#Visualizarcita .form{
+    background-color: white;
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    padding: 4.5em 3em;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+    text-align: center;
+}
+#Visualizarcita h2{
+    font-size: 2rem;
+    margin-bottom: .5em;
+}
+
+#Visualizarcita .form_grupo{
+    margin-top: 3em;
+    display: grid;
+    gap: 2.5em;
+}
+#Visualizarcita .contenedor{
+position: relative;
+--color:#5757577e;
+}
+#Visualizarcita input{
+   width: 100%;
+   background: none;
+   color: #706c6c; 
+   font-size: 1rem;
+   padding: .6em .3em;
+   border: none;
+   outline: none;
+   border-bottom: 1px solid var(--color);
+   font-family: 'Roboto',sans-serif;
+}
+#Visualizarcita input:focus + .form_label,
+#Visualizarcita input:not(:placeholder-shown) + .form_label{
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+    color: #0b7973;
+}
+
+#Visualizarcita .form_label{
+    color:  var(--color);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+}
+
+#Visualizarcita .form_submit{
+    background-color: #0b7973;
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: .8em 0;
+    border: none;
+    border-radius: .5em;
+}
+
+#Visualizarcita .form_line{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #0e8a84;
+    transform: scale(0);
+    transform: left bottom;
+    transition: transform .4s;
+}
+
+#Visualizarcita input:focus ~ .form_line,
+#Visualizarcita input:not(:placeholder-shown) + .form_line{
+    transform: scale(1);
+}
+
+@media (max-width:425px){
+    #Visualizarcita h2{
+        font-size: 1.8rem;
+    }
+}
+
+
+
+#reservarcita{
+    background: #808080;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #3fada8, #808080);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #3fada8, #808080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    display: flex;
+    min-height: 100vh;
+}
+
+#reservarcita .contenedor{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    max-width: 100%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+    text-align: center;
+}
+#reservarcita .reservar1{
+    padding: 20px;
+    color: #4D4D5C;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    max-width: 350px;
+}
+#reservarcita h6{
+    font-size: 33px;
+    font-weight: bold;
+    font-family: 'Raleway';
+    margin: 20px 0px;
+    font-family: 'Roboto',sans-serif;
+}
+#reservarcita p{
+    font-size: 15px;
+    font-family: 'Raleway';
+    margin: 10px 0px;
+    font-family: 'Roboto',sans-serif;
+}
+
+#reservarcita .horario{
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+}
+
+
+#reservarcita h2 { 
+    font-size: 2rem;
+    margin: 16px;
+}
+#reservarcita .sexo { 
+
+    display: flex;
+    margin: 0px 30px 0px 50px;
+    justify-content: center;
+}
+#reservarcita input{
+    width: 100%;
+    margin: 3px;
+    color: #6e6b6b; 
+    font-size: 1rem;
+    padding: .6em .3em;
+    border:rgb(197, 141, 37) ;
+    border-bottom: 1px solid rgb(14, 163, 168);
+    font-family: 'Roboto',sans-serif;
+ }
+
+ #reservarcita .form_submit{
+    background-color: #0b7973;
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: .8em 0;
+    border: none;
+    border-radius: .5em;
+}
+
+#Iniciarsesion
+{
+    background: #8e9eab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    min-height: 100vh;
+}
+
+#Iniciarsesion .form{
+    background-color: white;
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    padding: 4.5em 3em;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+    text-align: center;
+}
+#Iniciarsesion h2{
+    font-size: 2rem;
+    margin-bottom: .5em;
+}
+
+#Iniciarsesion .form_grupo{
+    margin-top: 3em;
+    display: grid;
+    gap: 2.5em;
+}
+#Iniciarsesion .contenedor{
+position: relative;
+--color:#5757577e;
+}
+#Iniciarsesion input{
+   width: 100%;
+   background: none;
+   color: #706c6c; 
+   font-size: 1rem;
+   padding: .6em .3em;
+   border: none;
+   outline: none;
+   border-bottom: 1px solid var(--color);
+   font-family: 'Roboto',sans-serif;
+}
+#Iniciarsesion input:focus + .form_label,
+#Iniciarsesion input:not(:placeholder-shown) + .form_label{
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+    color: #0b7973;
+}
+
+#Iniciarsesion .form_label{
+    color:  var(--color);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+}
+
+#Iniciarsesion .form_submit{
+    background-color: #0b7973;
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: .8em 0;
+    border: none;
+    border-radius: .5em;
+}
+
+#Iniciarsesion .form_line{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #0e8a84;
+    transform: scale(0);
+    transform: left bottom;
+    transition: transform .4s;
+}
+
+#Iniciarsesion input:focus ~ .form_line,
+#Iniciarsesion input:not(:placeholder-shown) + .form_line{
+    transform: scale(1);
+}
+
+@media (max-width:425px){
+    #Iniciarsesion h2{
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ULTIMO*/
+footer{
+    background-color: rgb(7, 7, 7);
+    font-size: 11px;
+}
+
+footer .datos{
+    padding: 0px;
+    color: white;
+    display: grid;
+}
+footer .info{
+    text-align: initial;
+    padding: 25px;
+    flex-direction: column;
+    justify-content:  center;
+}
+
+footer .localizacion{
+    display: flex;
+    margin:20px 0px;
+    align-items: center ;
+}
+
+footer h4{
+    margin: 0px;
+    text-size-adjust: 12px;
+}
+footer p1{
+    margin: 10px;
+    font-size: 12px;
+    color: rgb(150, 146, 146);
+}
+footer p{
+    text-align: justify;
+    color: rgb(150, 146, 146);
+}

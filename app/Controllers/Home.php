@@ -2,13 +2,14 @@
 
 namespace App\Controllers;
 use App\Models\Usuario;
+use App\Models\Paciente;
 
 class Home extends BaseController
 {
     public function index()
     {
         $data = [
-            'title' => 'Titulo de la pagina',
+            'title' => 'Audentic',
         ];
 
         echo view('home/header',$data);
@@ -18,6 +19,14 @@ class Home extends BaseController
     // https://localhost/audentic/home/login
     public function login(){
         return view('login');
+    }
+    public function consultar(){
+        $nombre=$this->request->getPost('nombre');
+        $dni=$this->request->getPost('dni');
+
+
+
+
     }
 
     // login->formulario->autenticar->modelo_USUARIO->welcome_message

@@ -77,13 +77,13 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="<?php echo base_url();?>/menu/pacientes">
+							<a href="<?php echo base_url();?>/menu/servicios">
 								<i class="fas fa-layer-group"></i>
 								<p>Servicios</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="<?php echo base_url();?>/menu/pacientes">
+							<a href="<?php echo base_url();?>/menu/tratamientos">
 								<i class="fas fa-layer-group"></i>
 								<p>Tratamientos</p>
 							</a>
