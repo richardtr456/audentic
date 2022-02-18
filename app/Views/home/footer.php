@@ -8,11 +8,11 @@
                     clientes brindándoles lo mejor en calidad profesional, entregando innovación y un
                     protocolo adecuado de atención.</p>
 
-                <img src="img/face.png" alt="CSS" width="30">
-                <img src="img/insta.png" alt="CSS" width="30">
-                <img src="img/tuit.png" alt="CSS" width="30">
-                <img src="img/what.png" alt="CSS" width="30">
-                <img src="img/yutu.png" alt="CSS" width="30">
+                <img src="<?php echo base_url('public/img/pagina/face.png')?>" alt="CSS" width="30">
+                <img src="<?php echo base_url('public/img/pagina/insta.png')?>" alt="CSS" width="30">
+                <img src="<?php echo base_url('public/img/pagina/tuit.png')?>" alt="CSS" width="30">
+                <img src="<?php echo base_url('public/img/pagina/what.png')?>" alt="CSS" width="30">
+                <img src="<?php echo base_url('public/img/pagina/yutu.png')?>" alt="CSS" width="30">
             </div>
 
             <div class="info">
@@ -24,15 +24,15 @@
                 <h4>Información de contacto</h4>
                 <hr>
                 <div class="localizacion">
-                    <img src="img/ubi.png" alt="CSS" width="30">
+                    <img src="<?php echo base_url('public/img/pagina/ubi.png')?>" alt="CSS" width="30">
                     <p1>Av. San Martín 331 2do piso Tacna - Perú </p1>
                 </div>
                 <div class="localizacion">
-                    <img src="img/fono.png" alt="CSS" width="30" height="40">
+                    <img src="<?php echo base_url('public/img/pagina/fono.png')?>" alt="CSS" width="30" height="40">
                     <p1>+51 954126358 <br> +51 984562269 </p1>
                 </div>
                 <div class="localizacion">
-                    <img src="img/gmail.png" alt="CSS" width="30" height="23">
+                    <img src="<?php echo base_url('public/img/pagina/gmail.png')?>" alt="CSS" width="30" height="23">
                     <p1>Audentic.tacna@gmail.com </p1>
                 </div>
 

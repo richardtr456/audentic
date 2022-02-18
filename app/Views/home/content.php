@@ -122,7 +122,7 @@
     </section>
 
     <section id="Visualizarcita">
-            <form class="form" action="<?php echo base_url('cargar')?>" method="post" id="form">
+            <form class="form" action="<?php echo base_url('consultar')?>" method="post" id="form">
                 <h2>Visualizar Cita</h2>
                 <div class="form_grupo">
                     <div class="contenedor">

@@ -14,7 +14,7 @@ class Sesion extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['nombre_se','deuda','costo','cobrado','fecha'];
+    protected $allowedFields = ['nombre_se','id_tratamiento','deuda','costo','cobrado','fecha'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
@@ -25,7 +25,7 @@ class Sesion extends Model
     protected $validationMessages = [];
     protected $skipValidation     = false;
 
-    public function registrarTratamiento($data){
+    public function registrarSesion($data){
             return $this->insert($data);
     }
 

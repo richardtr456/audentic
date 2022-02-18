@@ -52,6 +52,12 @@
 							<h4 class="text-section">Components</h4>
 						</li>
 						<li class="nav-item">
+							<a href="<?php echo base_url();?>/menu/citas">
+								<i class="fas fa-layer-group"></i>
+								<p>Citas</p>
+							</a>
+						</li>
+						<li class="nav-item">
 							<a href="<?php echo base_url();?>/menu/especialidades">
 								<i class="fas fa-layer-group"></i>
 								<p>Especialidades</p>

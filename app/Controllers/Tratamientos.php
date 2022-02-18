@@ -6,7 +6,9 @@ use App\Models\Profesional;
 use App\Models\Especialidad;
 use App\Models\Profe_Espec;
 use App\Models\Paciente;
+use App\Models\Pago;
 use App\Models\Servicio;
+use App\Models\Sesion;
 
 class Tratamientos extends BaseController{
     public function registrar(){
@@ -90,6 +92,10 @@ class Tratamientos extends BaseController{
 
 	public function eliminar($id_tratamiento){
 		$data = ["id_tratamiento" => $id_tratamiento];
+		$pago=new Pago();
+		$pagos=$pago->eliminar($id_tratamiento);
+		$sesion=new Sesion();
+		$sesiones=$sesion->eliminar($data);
 		$delete_especialidad = new Tratamiento();
 		$delete_especialidades= $delete_especialidad->eliminar($data);
 		

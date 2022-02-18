@@ -20,13 +20,11 @@ class Home extends BaseController
     public function login(){
         return view('login');
     }
+    
     public function consultar(){
         $nombre=$this->request->getPost('nombre');
         $dni=$this->request->getPost('dni');
-
-
-
-
+        return view('citas/calendarioLLAMA/index');
     }
 
     // login->formulario->autenticar->modelo_USUARIO->welcome_message

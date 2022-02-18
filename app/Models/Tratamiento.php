@@ -54,10 +54,16 @@ class Tratamiento extends Model
          return $this->delete($data);
      }
 
-     public function obtenerNombre($data) {
-         $Nombres =  $this->db->table('Login');
-         $Nombres->where($data);
-         return $Nombres->get()->getResultArray();
+     public function obtenerTratamiento($data) {
+        $Registros = $this->db->query("SELECT a.id_tratamiento,
+                                        b.nombre_servicio,
+                                        b.id_servicio,c.id_usuario,f.id_profesional,
+                                        CONCAT(c.nombre_usu,' ',c.apellido_usu) as nombre_usuario, 
+                                        c.DNI,f.nombre,a.costo_inicial,a.descripcion_trata,a.tiempo	from 
+                                            tratamiento a INNER JOIN servicio b on a.id_servicio=b.id_servicio
+                                        INNER JOIN usuario c on c.id_usuario=a.id_usuario
+                                        INNER JOIN profesional f on f.id_profesional=a.id_profesional where a.id_tratamiento=$data");
+        return $Registros->getResult();
      }
     
 }

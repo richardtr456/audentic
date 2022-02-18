@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
+$routes->post('/consultar', 'Home::consultar');
 
 $routes->get('/salir', 'Home::salir');
 $routes->post('/autenticar', 'Home::autenticar');
@@ -122,10 +123,33 @@ $routes->group('/menu',["filter" => "sesionActiva"], function ($routes) {
 
         //? :para crear los pacientes
         $routes->post('registrar', 'Sesiones::registrar');
+        $routes->post('registrarpago', 'Sesiones::registrarPago');
+
         //TODO: para editar los pacientes
         $routes->post('actualizar', 'Sesiones::actualizar');
         //! : para eliminar los pacientes
+        $routes->get('eliminarpago/(:any)', 'Sesiones::eliminarPago/$1');
         $routes->get('eliminar/(:any)', 'Sesiones::eliminar/$1');
+    });
+
+
+    $routes->group('tipopagos', function ($routes) {
+        // https://localhost/audentic/menu/pacientes/registrar
+        //* :para visualizar los pacientes
+        $routes->get('/', 'TipoPagos::index');
+        //? :para crear los pacientes
+        $routes->post('registrar', 'TipoPagos::registrar');
+        //TODO: para editar los pacientes
+        $routes->post('actualizar', 'TipoPagos::actualizar');
+        //! : para eliminar los pacientes
+        $routes->get('eliminar/(:any)', 'TipoPagos::eliminar/$1');
+    });
+    $routes->group('citas', function ($routes) {
+        // https://localhost/audentic/menu/pacientes/registrar
+        //* :para visualizar los pacientes
+        $routes->get('/', 'Citas::index');
+        $routes->get('estado', 'Citas::estado');
+
     });
     
     
